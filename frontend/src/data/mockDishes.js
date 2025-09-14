@@ -1,7 +1,7 @@
 // Mock data for the Party Menu Selection App
 import kajuPaneerImg from '../assets/kaju_panner.jpg';
 import butterChickenImg from '../assets/Best-butter-chicken-recipe-instagram.jpg';
-import dalimg from '../assets/dal-makhani.jpg';
+import dalimg from '../assets/Dal-makhani.jpg';
 import springimg from '../assets/spring-roll-veg.jpg';
 import chickenwingimg from '../assets/garlicgingerwings1.jpg';
 import hakkaNoodlesimg from '../assets/Hakka-Noodles-1.jpg';
