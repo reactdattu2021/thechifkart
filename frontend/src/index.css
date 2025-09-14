@@ -1,0 +1,366 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  color: #fff;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff0080, #7928ca, #00dbde);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff0080, 0 0 20px #7928ca; }
+  to { text-shadow: 0 0 20px #00dbde, 0 0 40px #ff0080; }
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Filters */
+.filters-container {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.category-tab {
+  padding: 12px 24px;
+  border-radius: 25px;
+  background: transparent;
+  border: 2px solid #ff0080;
+  color: #ff0080;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-tab.active,
+.category-tab:hover {
+  background: #ff0080;
+  color: white;
+  box-shadow: 0 0 15px #ff0080;
+}
+
+/* Dish Cards */
+.dish-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.dish-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dish-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px #ff0080;
+}
+
+.dish-image {
+  position: relative;
+  height: 330px;
+ 
+  overflow: hidden;
+}
+.search-input {
+  width: 80%;             /* Take 80% width */
+  margin: 0 auto;         /* Center horizontally */
+  display: block;         /* Ensure margin:auto works */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+
+.dish-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.dish-card:hover .dish-image img {
+  transform: scale(1.1);
+}
+
+.dish-content {
+  padding: 20px;
+}
+
+.dish-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.dish-description {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-bottom: 12px;
+}
+
+.dish-category {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.dish-actions {
+  display: flex;
+  gap: 12px;
+}
+.dish-actions {
+  display: flex;
+  justify-content: center; /* Center buttons */
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.ingredients-btn,
+.add-btn,
+.remove-btn {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.ingredients-btn {
+  background: transparent;
+  border: 2px solid #00dbde;
+  color: #00dbde;
+}
+.ingredients-btn:hover {
+  background: #00dbde;
+  color: black;
+  box-shadow: 0 0 15px #00dbde;
+}
+
+.add-btn {
+  background: #27ae60;
+  color: white;
+}
+.add-btn:hover {
+  background: #2ecc71;
+  box-shadow: 0 0 15px #27ae60;
+}
+
+.remove-btn {
+  background: #e74c3c;
+  color: white;
+}
+.remove-btn:hover {
+  background: #c0392b;
+  box-shadow: 0 0 15px #e74c3c;
+}
+
+/* Modal */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  background: rgba(20,20,20,0.95);
+  border: 2px solid #ff0080;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #ff0080;
+  color: white;
+}
+.modal-overlay {
+  position: fixed;              /* Cover full screen */
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  background: rgba(0, 0, 0, 0.9);
+
+  display: flex;                /* Center contents */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: rgba(20,20,20,0.95);
+  border: 2px solid #ff0080;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #ff0080;
+  color: white;
+  padding: 30px;
+  max-width: 500px;
+  height: 98%;
+  width: 90%;                   /* Responsive */
+  text-align: center;           /* Optional: center text */
+}
+/* Dish Type Badge */
+.dish-type-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+.dish-type-badge.veg {
+  background: linear-gradient(135deg, #00c853, #2ecc71);
+  box-shadow: 0 0 12px #00c853;
+}
+
+.dish-type-badge.nonveg {
+  background: linear-gradient(135deg, #e53935, #ff1744);
+  box-shadow: 0 0 12px #e53935;
+}
+.modal-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #95a5a6;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+  transform: scale(1.1);
+}
+.modal-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingredients-section h3 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 0px;
+ 
+  padding-bottom: 5px;
+}
+
+
+.ingredient-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+.ingredient-quantity {
+  color:#2c3e50;
+  font-style: italic;
+  font-size: 0.9em;
+}
+.dish-details {
+  color:#2c3e50;
+  border-radius: 8px;
+  padding: 5px;
+  
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    max-width: none;
+    margin: 10px;
+  }
+}
