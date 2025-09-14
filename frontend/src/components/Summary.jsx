@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Summery.css';
+import './Summary.css';
 
 const SelectedSummary = ({ selectedDishes, dishes, onRemoveDish, onQtyChange }) => {
   const selectedDishesData = selectedDishes.map((sel) => {
